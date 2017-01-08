@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@media only screen and (max-device-width: 1024px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+body {
+	font-family: 'Lato', sans-serif;
+	line-height: 150%;
+	text-align: justify;
+}
+/*#container {
+	
+	line-height: 150%;
+	text-align: justify;
+}*/
+div p {
+	padding: 5px;
+}
+div p:nth-child(odd)
+{
+    border-left: 5px solid #C2C290;
+}
+div p:nth-child(even)
+{
+    /*border-left: 5px solid #EB712F;*/
+    border-left: 5px solid #E34819;
+}
+.frozen {
+	background-image: url("../images/frozenBubble.jpg");
+	min-height: 900px;
+	width: 100%;
+	background-attachment: fixed;
+	background-position: center;
+	position: relative;
+}
+h1 {
+	position: absolute;
+	left: 40%;
+	top: 40%;
+	font-size: 60px;
+	color: #1b7a9f;
+	font-style: italic;
+}
+.wave {
+	background-image: url("../images/wave.jpg");
+	min-height: 500px;
+	width: 100%;
+	background-attachment: fixed;
+	background-position: center;
+}
+.tree {
+	background-image: url("../images/tree.jpg");
+	min-height: 500px;
+	width: 100%;
+	background-attachment: fixed;
+	background-position: center;
+}
+.landscape {
+	background-image: url("../images/landscape.jpg");
+	min-height: 500px;
+	width: 100%;
+	background-attachment: fixed;
+	background-position: center;
+}
+.jetty {
+	background-image: url("../images/jetty.jpg");
+	min-height: 500px;
+	width: 100%;
+	background-attachment: fixed;
+	background-position: center;
+}
+footer {
+	width: 100%;
+	height: 80px;
+	/*color: rust; #87CEEB; #EB712F*/
+	background-color: #F07575; 
+	background: linear-gradient(to bottom right, #EB712F, rgba(0,0,0,0));
+	text-align: center;
+	margin-bottom: 20px;
+}
