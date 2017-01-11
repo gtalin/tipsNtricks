@@ -1,0 +1,57 @@
+.container {
+  background: #fff url(https://upload.wikimedia.org/wikipedia/commons/0/02/Analogue_clock_face.svg) no-repeat center;
+  width: 225px;
+  height: 225px;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: relative;
+  border: 5px solid black;
+  /*padding: 10px;
+  margin: 20px;*/
+}
+.container::after{
+  content:"";
+  width: 7%;
+  height: 7%;
+  background-color: black;
+  position: absolute;
+  left: 47%;
+  top: 47%;
+  border-radius: 50%;
+}
+.hand{
+  width: 100px;
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: top left;
+  /*origin by default is center
+  But clock hand should move along
+  left or right.*/
+  /*transform: rotate(10deg);
+  To rotate down, positive values.
+  rotate up, -ve
+  */
+  /*transform: rotate(-90deg);*/
+  /*transition: all .5s;*/
+  /*With the above line seconds 
+  hand spins
+  the other way around before starting each new rotation
+  which happens at 3*/
+  transition-timing: linear;
+}
+.hour {
+  width: 70px;
+  height: 5px;
+}
+.minute {
+  width: 85px;
+  height: 5px;
+}
+.second {
+  width: 90px;
+  height: 2px;
+  background-color: red;
+}
