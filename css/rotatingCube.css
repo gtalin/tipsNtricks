@@ -1,0 +1,66 @@
+.container {
+  perspective: 800px;
+  width: 100px;
+  height: 100px;
+  perspective-origin: 50% 50px;
+}
+.cube {
+  position: relative;
+  left:300px;
+  top: 70px;
+  
+  transform-style: preserve-3d;
+}
+.plane {
+  position: absolute;
+  /*Will give all planes stacked on top of each other*/
+  width: 100px;
+  line-height: 100px;
+  background-color: #007FFF;
+  text-align: center;
+  opacity: 0.8;
+  /*transform: rotateY(40deg);*/
+  transform: rotateX(-15deg) rotateY(15deg);
+}
+.front {
+  background: yellow;
+  transform: translate3d(0, 0, 50px);
+}
+.back {
+  background: orange;
+  transform: rotateY(180deg) translate3d(0, 0, 50px);
+}
+.left {
+  background: green;
+  transform: rotateY(-90deg) translate3d(0, 0, 50px);
+}
+.right {
+  background: magenta;
+  transform: rotateY(90deg) translate3d(0, 0, 50px);
+}
+.top {
+  background: blue;
+  transform: rotateX(90deg) translate3d(0, 0, 50px);
+}
+.bottom {
+  background: red;
+  transform: rotateX(-90deg) translate3d(0, 0, 50px);
+}
+
+@keyframes spin {
+  from,to  { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  16%      { -webkit-transform: rotateY(-360deg);                           }
+  50%      { -webkit-transform: rotateY(0deg);                           }
+    /*33%      { -webkit-transform: rotateY(-90deg) rotateZ(90deg);            }
+    50%      { -webkit-transform: rotateY(-180deg) rotateZ(90deg);           }*/
+    66%      { -webkit-transform:  rotateX(360deg);             }
+    83%      { -webkit-transform: rotateX(90deg);                            }
+	  /*0% { transform: rotateY(0); }
+	  25% { transform: rotateY(360deg); }
+    75% from { transform: rotateX(0); }
+	  100% { transform: rotateX(-360deg); }*/
+}
+
+.cube {
+	animation: spin 10s infinite linear;
+}
