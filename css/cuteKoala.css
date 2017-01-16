@@ -1,0 +1,101 @@
+.container {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+.face {
+  top: 50px;
+  width: 80%;
+  height: 80%;
+  background-color: grey;
+  border-radius: 50%;
+  position: relative;
+  /*opacity: 0.5;*/
+  /*z-index: 2;*/
+}
+.face::before{
+  background: linear-gradient(45deg, transparent 75%, rgb(220, 20, 60) 25%), linear-gradient(135deg, transparent 75%, rgb(220, 20, 60) 75%)
+}
+.eyes {
+  background: #212121;
+ /*background: radial-gradient(circle at 50% 50%, white 5px, black 5px);*/
+  /*width: 15%;
+  height: 15%;*/
+  top: 30%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  /*opacity: 0.5;*/
+}
+.eyesLeft {
+  left: 20%;
+}
+.eyesRight {
+  right: 20%;
+}
+.shine {
+  width: 10%;
+  height: 10%;
+  left: 55%;
+  top: 65%;
+  /*content: "";*/
+  border-radius: 50%;
+  border: 1px solid white;
+  background: #e0e0e0;
+  position: absolute;
+  opacity: 1;
+  /*z-index: 5;*/
+}
+.shine2 {
+  width: 30%;
+  height: 30%;
+  left: 20%;
+  top: 20%;
+}
+.nose {
+  width: 20%;
+  height: 30%;
+  left: 40%;
+  top: 40%;
+  background-color: pink;
+  border-radius: 50% / 60% 60% 40% 40%;
+  /*1st set needed to make t all round*/
+  position: absolute;
+  z-index: 3;
+}
+.lip{
+  width: 30%;
+  height: 20%;
+  border-radius: 50% /40%;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-left: 2px solid transparent;
+	border-top: 2px solid transparent;
+  position: absolute;
+  top: 63%;
+  
+}
+.lipLeft {
+  left: 19%;
+}
+.lipRight{
+  right: 19%;
+  transform: rotateY(180deg);
+}
+.ear {
+  width: 25%;
+  height: 25%;
+  position: absolute;
+  background-color: pink;
+  border: 20px solid grey;
+  border-radius: 50%;
+  z-index: -2;
+}
+.rightear {
+  right: 0%;
+}
+/*.ears::after{
+  left: 400px;
+  transform: rotate(0deg);
+}*/
