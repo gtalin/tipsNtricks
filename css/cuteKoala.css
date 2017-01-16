@@ -1,5 +1,5 @@
 .container {
-  width: 500px;
+  max-width: 500px;
   height: 500px;
   margin: 0 auto;
 }
@@ -13,8 +13,31 @@
   /*opacity: 0.5;*/
   /*z-index: 2;*/
 }
-.face::before{
-  background: linear-gradient(45deg, transparent 75%, rgb(220, 20, 60) 25%), linear-gradient(135deg, transparent 75%, rgb(220, 20, 60) 75%)
+.face::before, 
+.face::after{
+  /*for hair*/
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  top: -7%;
+  left: 30%;
+  border: 3px solid grey;
+  /*border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-top: 2px solid transparent;*/
+  border-left: 0;
+  border-bottom: 0;
+  border-top: 0;
+  position: absolute;
+  content: "";
+  
+  /*background: linear-gradient(45deg, transparent 75%, rgb(220, 20, 60) 25% );triangle*/
+  /*box-shadow: 5px 3px 0 white, 15px 3px 0 grey;*/
+  box-shadow: 3px 0 white, 6px 0 grey, 9px 0 white, 12px 0 grey;
+  z-index: -2;
+}
+.face::after{
+  left: 33%;
 }
 .eyes {
   background: #212121;
@@ -22,8 +45,8 @@
   /*width: 15%;
   height: 15%;*/
   top: 30%;
-  width: 40px;
-  height: 40px;
+  width: 10%;
+  height: 15%;
   border-radius: 50%;
   position: absolute;
   /*opacity: 0.5;*/
@@ -64,6 +87,18 @@
   position: absolute;
   z-index: 3;
 }
+.nose::after{
+  /*Shiny effect nose*/
+  content:"";
+  position: absolute;
+  width: 20%;
+  height: 40%;
+  border-radius: 50%;
+  transform: rotate(10deg);
+  left: 10%;
+  top: 30%;
+  background: #ffd0d7;
+}
 .lip{
   width: 30%;
   height: 20%;
@@ -71,30 +106,71 @@
   border-right: 2px solid black;
   border-bottom: 2px solid black;
   border-left: 2px solid transparent;
-	border-top: 2px solid transparent;
+  border-top: 2px solid transparent;
   position: absolute;
-  top: 63%;
-  
+  top: 62%;
+}
+.lip::after{
+  position: absolute;
+  content: "";
+  width: 60%;
+  height: 50%;
+  border-radius: 50%;
+  /*background: #C0C0C0;*/
+  background-image: radial-gradient(ellipse, #A9A9A9 0%, grey 100%);
 }
 .lipLeft {
   left: 19%;
+}
+.lipLeft::after{
+  left: 30%;
+  top: 40%;
+  transform: rotate(-10deg);
 }
 .lipRight{
   right: 19%;
   transform: rotateY(180deg);
 }
+.lipRight::after{
+  left: 30%;
+  top: 40%;
+  transform: rotate(-10deg);
+}
 .ear {
-  width: 25%;
-  height: 25%;
+  width: 35%;
+  height: 35%;
   position: absolute;
-  background-color: pink;
-  border: 20px solid grey;
+  background: grey;
+  /*background-color: pink;
+  border: 20px solid grey;*/
   border-radius: 50%;
   z-index: -2;
+}
+.ear::after{
+  /*for the pink of ear*/
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: pink;
+}
+.leftear::after{
+  /*to position pink*/
+  left: 20%;
+  top: 15%;
+  box-shadow: inset 0px 10px 2px 0px #696969;
 }
 .rightear {
   right: 0%;
 }
+.rightear::after {
+  /*to pisition pink*/
+  right: 20%;
+  top: 15%;
+  box-shadow: inset 10px 10px 2px 0px #696969;
+}
+
 /*.ears::after{
   left: 400px;
   transform: rotate(0deg);
