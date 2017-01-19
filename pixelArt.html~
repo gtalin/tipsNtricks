@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JS Pattern</title>
+    <link rel="stylesheet" href="pixelArt.css">
+
+<body>
+    <div id="container"></div>
+    <script src = "pixelArt.js"></script>
+</body>
+
+
+</html>
