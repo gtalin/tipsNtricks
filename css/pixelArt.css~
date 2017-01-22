@@ -1,46 +1,19 @@
-.background { 
-    background-color : rgb (52 , 166 , 251) ;
-    table-layout : fixed ;
-    border-spacing : 0;
-    position: absolute;
-    width: 50%;
-    left: 0;
-
-    /*border: 2px solid black;*/
-}
-table {
-    width: 80%;
-    height: 80%;
-    }
-td { 
-    padding : 0;
-    background-color: green;
-}
-.cross
+*
 {
-    background-color: rgb(47, 171, 160);
+    margin: 0;
+    padding: 0;
 }
-.oh
-{
-    background-color: black;
-}
-.lips
-{
-    background-color: red;
-}
-
-
-/*
 #container
 {
     width: 500px;
     height: 500px;
     margin: 0 auto;
+
     vertical-align: top;
+
+    /*background: pink;*/
     align: center;
 }
-*/
-
 /*
 tr {
   width: 100%;
@@ -52,16 +25,18 @@ td {
   background-color: rgb(12, 12, 222);
   border: 1px solid grey;
 }*/
-/*
 .row
 {
     display: block;
 
-    height: 10px;*/
+    height: 10px;
     /*If we don't set a height, huge gap between rows*/
     /*line-height: 0;*/
-   /* margin: 0; outline: none; }*/
-/*
+    margin: 0;
+
+    outline: none;
+    /*vertical-align: top;*/
+}
 .row div
 {
     display: inline-block;
@@ -70,6 +45,7 @@ td {
     height: 10px;
     border: 1px solid grey;
     background-color:white ;
+    /*vertical-align: top;*/
 }
 .row .cross
 {
@@ -83,4 +59,3 @@ td {
 {
     background-color: red;
 }
-*/
