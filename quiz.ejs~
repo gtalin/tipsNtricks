@@ -6,9 +6,14 @@
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> --> <!-- load fontawesome -->
   <style>
       body        { padding-top:80px; font-family: Arial, sans-serif; line-height: 1.8;}
-      h3 {padding-bottom: 5px;border-bottom: 2px solid #ccc;}
+      h3 {padding-bottom: 10px;
+        padding-top: 10px;
+        border-bottom: 2px solid #ccc;}
       .container {border: 1px solid #ccc;}
-      input[type="radio"] {margin-right: 2px;}
+      input[type="radio"] {margin-right: 5px;}
+.hidden {
+  display: none;
+}
 
   </style>
 </head>

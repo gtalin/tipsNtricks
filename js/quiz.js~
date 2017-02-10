@@ -10,7 +10,6 @@ submit.addEventListener("click", checkResults);
 
 
 function checkResults(event) {
-  event.preventDefault();//so that the form doesn't refresh
   var radio = document.body.querySelectorAll("input[type=radio]")
   
   var score=0;
@@ -66,12 +65,7 @@ function displayScore(score) {
   //attach event listener to restart button
   quizContainer.classList.add("hidden");
   scoreContainer.classList.remove("hidden");
-  result.innerHTML = score + "/" + "7";
-  restart.addEventListener("click", showQuiz);
+  result.innerHTML = score;
 }
 
-function showQuiz() {
-  scoreContainer.classList.add("hidden");
-  form.reset();
-  quizContainer.classList.remove("hidden");
-}
+//function showQuiz() { }
