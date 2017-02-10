@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <title>Quiz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"> <!-- load bootstrap css -->
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> --> <!-- load fontawesome -->
+  <style>
+      body        { padding-top:80px; font-family: Arial, sans-serif; line-height: 1.8;}
+      h3 {padding-bottom: 5px;border-bottom: 2px solid #ccc;}
+      .container {border: 1px solid #ccc;}
+      input[type="radio"] {margin-right: 2px;}
+
+  </style>
+</head>
+<body>
+  <div class="container" id="quiz">
+    <div class="col-sm-6 col-sm-offset-3">
+      <form id="form">
+        <h3>Highest Peak Challenge</h3><br>
+        <p>
+          Highest peak Asia?<hr>
+          <input type="radio" name="asia" value="oyu">Cho Oyu<br>
+          <input type="radio" name="asia" value="k2">K2<br>
+          <input type="radio" name="asia" value="everest">Mount Everest<br>
+          <input type="radio" name="asia" value="lhotse">Lhotse<br>
+        </p><br><br>
+        <p>
+          Highest peak Africa?<hr>
+          <input type="radio" name="africa" value="stanley">Mount Stanley<br>
+          <input type="radio" name="africa" value="gessi">Mount Gessi<br>
+          <input type="radio" name="africa" value="dashen">Ras Dashen<br>
+          <input type="radio" name="africa" value="kilimanjaro">Mount Kilimanjaro<br>
+        </p><br><br>
+        <p>
+          Highest peak Europe?<hr>
+          <input type="radio" name="europe" value="makalu">Makalu<br>
+          <input type="radio" name="europe" value="manaslu">Manaslu<br>
+          <input type="radio" name="europe" value="blanc">Mount Blanc<br>
+          <input type="radio" name="europe" value="elbrus">Mount Elbrus<br>
+        </p><br><br>
+        <p>
+          Highest peak Australia?<hr>
+          <input type="radio" name="australia" value="tate">Mount Tate<br>
+          <input type="radio" name="australia" value="townsend">Mount Townsend<br>
+          <input type="radio" name="australia" value="skhara">Shkhara<br>
+          <input type="radio" name="australia" value="kosciuszko">Mount Kosciuszko<br>
+        </p><br><br>
+        <p>
+          Highest peak North America?<hr>
+          <input type="radio" name="namerica" value="logan">Mount Logan<br>
+          <input type="radio" name="namerica" value="denali">Denali<br>
+          <input type="radio" name="namerica" value="lucania">Mount Lucania<br>
+          <input type="radio" name="namerica" value="elias">Mount Saint Elias<br>
+        </p><br><br>
+        <p>
+          Highest peak South America?<hr>
+          <input type="radio" name="samerica" value="bonete">Cerro Bonete<br>
+          <input type="radio" name="samerica" value="pississ">Monte Pississ<br>
+          <input type="radio" name="samerica" value="tipas">Tipas<br>
+          <input type="radio" name="samerica" value="aconcagua">Aconcagua<br>
+        </p><br><br>
+        <p>
+          Highest peak Antarctica?<hr>
+          <input type="radio" name="antarctica" value="elizabeth">Mount Elizabeth<br>
+          <input type="radio" name="antarctica" value="vinson">Vinson Massif<br>
+          <input type="radio" name="antarctica" value="tyree">Mount Tyree<br>
+          <input type="radio" name="antarctica" value="markham">Mount Markham<br>
+        </p><br><br>
+        <button class="btn btn-primary" id="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+<div class="container hidden" id="score">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h3>The score is:</h2><br><p id="result"></p>
+    <button class="btn btn-primary" id="restart">Re-start</button>
+  </div>
+</div>
+<script src = "js/quiz.js"></script>
+</body>
+</html>
