@@ -79,6 +79,3 @@ footer {
 	text-align: center;
 	margin-bottom: 20px;
 }
-/*Rather than writing height width background-attachment and all 
-differently, should've made 1 class image and written those properties
-there coz it's the same for all images*/

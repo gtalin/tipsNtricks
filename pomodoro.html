@@ -1,0 +1,27 @@
+<!doctype HTML>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/pomodoro.css">
+</head>
+<body>
+  <div class="container">
+    <div class="time"></div>
+    <div class="tomato" id="tomato">
+      <h3>Session</h3>
+      <div id="tomatoText">1</div>
+      <button id="appState">Start</button>
+      <!--<button id="reset">Reset</button>-->
+      <!--Reset button not needed it's just a state-->
+    </div>
+    <div class="break">
+      <button id="decrementWork">-</button>
+      <span id="worktime">Work</span>
+      <button id="incrementWork">+</button><br>
+      <button id="decrementRest">-</button>
+      <span id="resttime">Rest</span>
+      <button id="incrementRest">+</button>
+    </div>
+  </div>
+  <script src = "js/pomodoro.js"></script>
+</body>
+</html>
