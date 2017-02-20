@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Tangerine');
 * {
   color: grey;
+  font-family: 'Tangerine', cursive;
+  font-weight: bold;
+}
+
+.container {
+  text-align: center;
+  width: 55%;
+  margin: auto;
+}
+h1 {
+  text-align: center;
+  font-size: 60px;
+  padding-bottom : 10px;
 }
 .tomato {
   width: 300px;
@@ -7,31 +21,65 @@
   height: 300px;
   border: 4px solid salmon;
   border-radius: 50%;
-  margin: 10px;
+  /*margin: 10px;*/
   text-align: center;
   font-size: 40px;
+  font-weight: bolder;
+}
+#tomatoText {
+  font-size: 50px;
+  margin-bottom: 10px;
 }
 .time, .break {
   width: 300px;
   height: 200px;
-  border:1px solid salmon;/*Just for size and position*/
+  /*border:1px solid salmon;*//*Just for size and position*/
+}
+button::-moz-focus-inner {
+  border: 0;
 }
 button {
-  width: 30px;
-  height: 30px;
   border-radius: 50%;
   background-color: salmon;
   color: white;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 30px;
+  outline: 0;
+  border: none;
+  cursor: pointer;
 }
-#appState, #reset {
-  width: 75px;
+button:disabled {
+  cursor: default;
+  opacity: .5;
+}
+#appState{
+  width: 125px;
+  height: 90px;
+  color: grey;
+  background-color: white;
+
+}
+.break {
+  text-align: center;
+}
+.break button{
+  font-family: monospace;
+  width: 50px;
   height: 50px;
+  margin-bottom: 10px;
 }
 span {
   display: inline-block;
   width: 120px;
-  background-color: lightblue;
+  /*background-color: lightblue;*/
   text-align: center;
+  font-size: 30px;
 }
+/*@media (min-width: 500px) {
+    .container {
+      background-color: lightblue;
+      width: 150%
+      margin: 0;
+    }
+}
+*/
