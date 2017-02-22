@@ -180,7 +180,6 @@ function init() {
     }
     else {
       console.log(pom.appState);
-
     }
 
   }
@@ -191,7 +190,6 @@ function init() {
     incRest.addEventListener("click", timeHandler);
     decRest.addEventListener("click", timeHandler);
     //Enable buttons
-
   }
 
   function removeEventListeners() {
@@ -200,14 +198,12 @@ function init() {
     incRest.removeEventListener("click", timeHandler);
     decRest.removeEventListener("click", timeHandler);
     //PLus disable the buttons
-
   }
 
   //setInterval(decrement, 1000);this will
   //be inside setHandler and will have a
   //bunch of conditions. But before that we'll write
   //decrement which will be outside
-
 
 }
 

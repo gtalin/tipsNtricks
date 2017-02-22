@@ -1,0 +1,128 @@
+div {
+  display: inline-block;
+}
+.cloud {
+  width: 200px;
+  height: 100px;
+  /*background: lightblue;*/
+  background: grey;
+  /*border: 5px solid darkblue;*/
+  background: linear-gradient(top, grey 25%, #d6f0fd 100%);
+  background: -webkit-linear-gradient(top, grey 25%, #d6f0fd 100%);
+  background: -moz-linear-gradient(top, grey 25%, #d6f0fd 100%);
+  background: -ms-linear-gradient(top, grey 25%, #d6f0fd 100%);
+  background: -o-linear-gradient(top, grey 25%, #d6f0fd 100%);
+  border-radius: 100px;
+  position: relative;
+  top: 100px;
+  left: 50px;
+}
+.cloud::before, .cloud::after {
+  content: "";
+  /*border: 5px solid darkblue;*/
+  background: grey;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1
+}
+.cloud::after {
+  top: -60px;
+  left: 70px;
+  width: 100px;
+  height: 100px;
+}
+
+.cloud::before {
+  top: -30px;
+  left: 30px;
+  width: 70px;
+  height: 70px;
+}
+.moon {
+  width: 100px;
+  height: 100px;
+  /*border: 5px solid black;*/
+  border-radius: 50%;
+  box-shadow: -50px 50px 3px #888888;
+  position: relative;
+  left: 350px;
+  top: 100px;
+}
+
+.thunder {
+  list-style-type: none;
+  transform: scale(.5) rotate(30deg);
+  position: relative;
+  top: 85px;
+}
+.bolt {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 80px 30px;
+  border-color: transparent transparent gold transparent;
+  /*border-right: 50px solid gold;
+  border-bottom: 100px solid gold;*/
+  position: relative;
+  left: 30px;
+}
+.bolt::after, .bolt::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 80px 30px;
+  border-color: transparent transparent gold transparent;
+  position: absolute;
+  top: 70px;
+  left: -10px;
+  transform: rotate(180deg);
+}
+.bolt:nth-child(even) {
+  position: absolute;
+  transform: scale(.8);
+  top:100px
+  right: 120px;
+}
+.rain {
+  list-style-type: none;
+  display: inline;
+  padding-right: 20px;
+  float: left;
+  position: relative;
+  left: 280px;
+  top: -50px;
+  transform: rotate(10deg);
+  z-index: -1;
+}
+.drop {
+  width: 5px;
+  height: 20px;
+  margin-bottom: 3px;
+  background: lightblue;
+  box-shadow: 12px 0px 2px lightblue,
+              24px 0px 0 lightblue,
+              36px 0px 2px lightblue,
+              48px 0px 0 lightblue,
+              60px 0px 2px lightblue;
+  /*transform: scale(.8);*/
+  /*transform: rotate(30deg);*/
+}
+/*.drop:nth-child(n+2) {
+  width: 10px;
+  height: 20px;
+  background: lightblue;
+  transform: scale(.8);
+}
+.drop:nth-child(n+3) {
+  width: 10px;
+  height: 20px;
+  background: lightblue;
+  transform: scale(.7);
+}
+.drop:nth-child(n+4) {
+  width: 10px;
+  height: 20px;
+  background: lightblue;
+  transform: scale(.6);
+}*/

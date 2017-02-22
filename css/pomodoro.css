@@ -75,11 +75,14 @@ span {
   text-align: center;
   font-size: 30px;
 }
-/*@media (min-width: 500px) {
-    .container {
-      background-color: lightblue;
-      width: 150%
-      margin: 0;
-    }
+/*Since for individual components tomato etc I've bot used
+percentage, this following (for small screens)
+wouldn't work the way I want it to*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .container {
+      width: 100%;
+      /*background-color: lightblue;*/
+      text-align: center;
+      padding: 10%;
+  }
 }
-*/
