@@ -1,5 +1,7 @@
-div {
-  display: inline-block;
+.icon {
+  /*display: inline-block;*/
+  float: left;
+  position: relative
 }
 .cloud {
   width: 200px;
@@ -38,22 +40,14 @@ div {
   width: 70px;
   height: 70px;
 }
-.moon {
-  width: 100px;
-  height: 100px;
-  /*border: 5px solid black;*/
-  border-radius: 50%;
-  box-shadow: -50px 50px 3px #888888;
-  position: relative;
-  left: 350px;
-  top: 100px;
-}
 
 .thunder {
   list-style-type: none;
   transform: scale(.5) rotate(30deg);
   position: relative;
-  top: 85px;
+  /*z-index: -1;*/
+  /*left: -100px;
+  top: 100px;*/
 }
 .bolt {
   width: 0;
@@ -64,7 +58,9 @@ div {
   /*border-right: 50px solid gold;
   border-bottom: 100px solid gold;*/
   position: relative;
-  left: 30px;
+  /*position: absolute;*/
+  left: 150px;
+  top: 110px;
 }
 .bolt::after, .bolt::before {
   content: "";
@@ -90,8 +86,8 @@ div {
   padding-right: 20px;
   float: left;
   position: relative;
-  left: 280px;
-  top: -50px;
+  left: 20px;
+  top: 70px;
   transform: rotate(10deg);
   z-index: -1;
 }
@@ -126,3 +122,108 @@ div {
   background: lightblue;
   transform: scale(.6);
 }*/
+.fog .line {
+  width: 160px;
+  height: 5px;
+  /*background: transparent;*/
+  /*border: none;*/
+  /*position: relative;*/
+  left: 0px;
+  box-shadow: 10px 110px 2px grey,
+              10px 119px 2px grey,
+              10px 128px 2px grey,
+              10px 137px 2px grey,
+              10px 146px 2px grey,
+              10px 155px 2px grey;
+  z-index: 2;
+}
+.sun {
+  width: 170px;
+  height: 170px;
+  background: gold;
+  border-radius: 50%;
+  position: relative;
+  left: 90px;
+  top: 50px;
+}
+.rays {
+  width: 10px;
+  height: 30px;
+  background: gold;
+  position: relative;
+  left: 80px;
+  top: -40px;
+  z-index: 5;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 220px gold;
+}
+.rays::before,
+.rays::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 10px;
+  height: 30px;
+  transform: rotate(60deg);
+  transform-origin: 50% 120px;
+  background: gold;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 210px gold;
+}
+.rays:before {
+  transform: rotate(120deg);
+}
+.moon {
+  width: 170px;
+  height: 170px;
+  /*border: 5px solid black;*/
+  border-radius: 50%;
+  box-shadow: -50px 50px 0px #888888;
+  position: relative;
+  left: 170px;
+  top: 0px;
+}
+.star {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 15px 15px 30px 15px;
+  border-color: transparent transparent #191970 transparent;
+  position: relative;
+}
+.star::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 15px 15px 30px 15px;
+  border-color: transparent transparent #191970 transparent;
+  position: absolute;
+  /*top: 30px;
+  left: -50px;*/
+  transform: rotate(180deg);
+  left: -18px;
+  top: 10px;
+
+}
+.star:nth-child(n+1) {
+  transform: scale(.8);
+}
+.star:nth-child(1) {
+  left: 30px;
+  top: 20px;
+}
+.star:nth-child(2) {
+  left: 60px;
+  top: 20px;
+}
+.star:nth-child(3) {
+  left: 30px;
+  top: -20px;
+}
+.star:nth-child(4) {
+  left: 60px;
+  top: -30px;
+}

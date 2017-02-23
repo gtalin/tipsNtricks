@@ -71,7 +71,7 @@ Pomodoro.prototype.appStateChange = function() {
 
 function init() {
   //create pomodoro object
-  var work=1, play=1;
+  var work=25, play=5;
   var pom = new Pomodoro(work,play);
 
   //variables that need to be updated
