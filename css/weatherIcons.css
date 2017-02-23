@@ -104,24 +104,6 @@
   /*transform: scale(.8);*/
   /*transform: rotate(30deg);*/
 }
-/*.drop:nth-child(n+2) {
-  width: 10px;
-  height: 20px;
-  background: lightblue;
-  transform: scale(.8);
-}
-.drop:nth-child(n+3) {
-  width: 10px;
-  height: 20px;
-  background: lightblue;
-  transform: scale(.7);
-}
-.drop:nth-child(n+4) {
-  width: 10px;
-  height: 20px;
-  background: lightblue;
-  transform: scale(.6);
-}*/
 .fog .line {
   width: 160px;
   height: 5px;
