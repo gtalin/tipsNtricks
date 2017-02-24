@@ -69,6 +69,9 @@ Pomodoro.prototype.appStateChange = function() {
   this.rest = !(this.rest);
 }*/
 
+
+
+
 function init() {
   //create pomodoro object
   var work=25, play=5;
@@ -180,6 +183,26 @@ function init() {
     }
     else {
       console.log(pom.appState);
+      //clearInterval(intervalId);
+      if (pom.appState === "PAUSE") {
+        console.log("play now");
+        pom.appState = "PLAY";
+        //start running.
+        removeEventListeners();
+        intervalId = setInterval(function () {
+          //time = decrement(time);
+          console.log(time);
+          time=decrement(time);
+        }, 1000);
+      }
+      else {
+        console.log("pause now");
+        pom.appState = "PAUSE";
+        console.log(time);
+        clearInterval(intervalId);
+        console.log(time);
+        addEventListeners();
+      }
     }
 
   }
@@ -190,6 +213,10 @@ function init() {
     incRest.addEventListener("click", timeHandler);
     decRest.addEventListener("click", timeHandler);
     //Enable buttons
+    incWork.disabled = false;
+    decWork.disabled = false;
+    incRest.disabled = false;
+    decRest.disabled = false;
   }
 
   function removeEventListeners() {
@@ -198,12 +225,46 @@ function init() {
     incRest.removeEventListener("click", timeHandler);
     decRest.removeEventListener("click", timeHandler);
     //PLus disable the buttons
+    incWork.disabled = true;
+    decWork.disabled = true;
+    incRest.disabled = true;
+    decRest.disabled = true;
   }
 
   //setInterval(decrement, 1000);this will
   //be inside setHandler and will have a
   //bunch of conditions. But before that we'll write
   //decrement which will be outside
+
+  function decrement(time) {
+    //decrement time in seconds
+      //+deals with "WORK" and "REST" switches
+    // on switch creates new Time obj based on that app
+    if (time.seconds >=2) {
+      time.seconds--;
+      tomato.innerHTML = time.humanReadable();
+    }
+    else {
+      // we're not resetting here. Just transition to other state
+      if (pom.currApp==="WORK") {
+        pom.currApp = "REST";
+        time = new Time(pom.rest * 60);
+        tomato.innerHTML = pom.rest;
+      }
+      else {
+        pom.currApp = "WORK";
+        time = new Time(pom.work * 60);
+        tomato.innerHTML = pom.work;
+      }
+      heading.innerHTML = pom.currApp[0]+pom.currApp.slice(1).toLowerCase();
+    }
+    //console.log(time);
+    //if we don't return time, old object will stay just as
+    //because js doesn't pass by reference. But passes a copy
+    //of reference. Thus we can modify contents of
+    //object but not the object itself. (unlike C++)
+    return time;
+  }
 
 }
 
