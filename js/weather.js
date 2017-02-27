@@ -1,13 +1,22 @@
-function cel2Fah () {
+/*function cel2Fah () {
   return (this.temp*9/5) + 32;
 }
 
 function fah2Cel () {
   return (this.temp-32)*5/9;
 }
+*/
+function kelvin2Fah() {
+  return (this.temp-273.15);
+}
+
+function kelvin2Cel() {
+  return (this.temp-273.15-32)*5/9;
+}
 
 function init() {
-  console.log("startup")
+  console.log("startup");
+
   var url1 = "https://ipinfo.io?callback";
   getHttp(url1)
      .then(
@@ -18,21 +27,24 @@ function init() {
          var location = document.getElementById("location");
          var locVal = document.createTextNode(value.city+","+value.country);
          location.appendChild(locVal);
-         var geoCoords = {lat:value.loc.split(",")[0], lon:value.loc.split(",")[0]};
+         var geoCoords = {lat:value.loc.split(",")[0], lon:value.loc.split(",")[1]};
          console.log(geoCoords);
          //will be useful to form url for next async get request
-         var url = `http://api.openweathermap.org/data/2.5/weather?lat=
-         ${geoCoords.lat}&lon=${geoCoords.lon}&appid=f9b57bc463f6b2d6f6206a5c2a525c9c`
+         //var url = `http://api.openweathermap.org/data/2.5/weather?lat=${geoCoords.lat}&lon=${geoCoords.lon}&appid=f9b57bc463f6b2d6f6206a5c2a525c9c`
+         var url = "http://api.openweathermap.org/data/2.5/weather?lat="+geoCoords.lat+"&lon="+geoCoords.lon+"&appid=f9b57bc463f6b2d6f6206a5c2a525c9c"
+
          console.log(url);
+
          //here we return the other asynch function
          //so we can use then on it outside of this function
          return getHttp(url);//if no return then nested inside
        })
-       .then(function(value){
+       .then(function(value2){
          //console.log(value);
          //value.weather[0].id
-         iconSelection(value.weather[0].id);
-         displayWeather(value);
+         console.log(JSON.stringify(value2));
+         iconSelection(value2.weather[0].id);
+         displayWeather(value2);
        });
 }
 
@@ -53,7 +65,7 @@ function displayWeather(weather) {
   var weatherText = document.getElementById("weather");
   var temp = document.getElementById("temperature");
   weatherText.appendChild(document.createTextNode(weather["weather"][0].description));
-  temp.appendChild(document.createTextNode(weather.main.temp));
+  temp.appendChild(document.createTextNode(weather.main.temp-273.15));
 }
 //test with 301, 302 and 310
 //iconSelection("310")
