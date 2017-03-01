@@ -8,7 +8,7 @@ body {
 h1 {
   font-size: 60px;
 }
-p {
+span, p {
   font-weight: bold;
   font-size: 20px;
 }

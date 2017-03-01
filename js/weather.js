@@ -6,16 +6,21 @@ function fah2Cel () {
   return (this.temp-32)*5/9;
 }
 */
-function kelvin2Fah() {
-  return (this.temp-273.15);
+function kelvin2Cel() {
+  return (this.temp-273.15).toFixed(2);
 }
 
-function kelvin2Cel() {
-  return (this.temp-273.15-32)*5/9;
+function kelvin2Fah() {
+  return ((this.temp-273.15)*9/5 + 32).toFixed(2);
 }
 
 function init() {
   console.log("startup");
+  var temp = {
+    temp: null,
+    unit: "C",
+    description: ""
+  };
 
   var url1 = "https://ipinfo.io?callback";
   getHttp(url1)
@@ -30,8 +35,8 @@ function init() {
          var geoCoords = {lat:value.loc.split(",")[0], lon:value.loc.split(",")[1]};
          console.log(geoCoords);
          //will be useful to form url for next async get request
-         //var url = `http://api.openweathermap.org/data/2.5/weather?lat=${geoCoords.lat}&lon=${geoCoords.lon}&appid=f9b57bc463f6b2d6f6206a5c2a525c9c`
-         var url = "http://api.openweathermap.org/data/2.5/weather?lat="+geoCoords.lat+"&lon="+geoCoords.lon+"&appid=f9b57bc463f6b2d6f6206a5c2a525c9c"
+         var url = `http://api.openweathermap.org/data/2.5/weather?lat=${geoCoords.lat}&lon=${geoCoords.lon}&appid=f9b57bc463f6b2d6f6206a5c2a525c9c`
+         //var url = "http://api.openweathermap.org/data/2.5/weather?lat="+geoCoords.lat+"&lon="+geoCoords.lon+"&appid=f9b57bc463f6b2d6f6206a5c2a525c9c"
 
          console.log(url);
 
@@ -39,12 +44,14 @@ function init() {
          //so we can use then on it outside of this function
          return getHttp(url);//if no return then nested inside
        })
-       .then(function(value2){
+       .then(function(weather){
          //console.log(value);
          //value.weather[0].id
-         console.log(JSON.stringify(value2));
-         iconSelection(value2.weather[0].id);
-         displayWeather(value2);
+         console.log(JSON.stringify(weather));
+         iconSelection(weather.weather[0].id);
+         temp.temp = weather.main.temp;
+         temp.description = weather["weather"][0].description;
+         displayWeather(temp);
        });
 }
 
@@ -59,13 +66,44 @@ function iconSelection(weatherId) {
   icon.className += weatherId;
 }
 
-function displayWeather(weather) {
+function displayWeather(tmp) {
   //Will display temperature and weather condition
-  console.log(weather);
+  console.log(tmp);
   var weatherText = document.getElementById("weather");
   var temp = document.getElementById("temperature");
-  weatherText.appendChild(document.createTextNode(weather["weather"][0].description));
-  temp.appendChild(document.createTextNode(weather.main.temp-273.15));
+  var unit = document.getElementById("unit");
+
+  weatherText.appendChild(document.createTextNode(tmp.description));
+  var tempTextNode = document.createTextNode((tmp.temp-273.15).toFixed(2));
+  var unitTextNode = document.createTextNode(tmp.unit);
+  temp.appendChild(tempTextNode);
+  unit.appendChild(unitTextNode);
+
+  // weatherText.innerHTML=tmp.description;
+  // temp.innerHTML=(tmp.temp).toFixed(2);
+  // unit.innerHTML=tmp.unit;
+
+  //attach event listener
+  unit.addEventListener("click", function() {
+    console.log("unit needs to be changed");
+    var converted;
+    if (tmp.unit=="C") {
+      tmp.unit = "F";
+      //unit.nodeValue=tmp.unit;
+      unitTextNode.nodeValue=tmp.unit;
+      converted = kelvin2Fah.call(tmp);
+      console.log(converted);
+      tempTextNode.nodeValue = converted;
+    }
+    else {
+      tmp.unit = "C";
+      unitTextNode.nodeValue=tmp.unit;
+      converted = kelvin2Cel.call(tmp);
+      console.log(converted);
+      tempTextNode.nodeValue = converted;
+    }
+  })
+
 }
 //test with 301, 302 and 310
 //iconSelection("310")
